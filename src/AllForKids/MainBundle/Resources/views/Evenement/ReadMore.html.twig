@@ -1,0 +1,121 @@
+{% extends 'default/index.html.twig' %}
+{#<link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />#}
+
+    {% block bodyindex %}
+       {# <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />#}
+
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
+        <!--/ .top-panel-->
+        <!-- .bg-level-1 -->
+        <div id="kids_middle_container">
+            <!-- .content -->
+            <div class="kids_top_content">
+                <div class="kids_top_content_middle ">
+                    <div class="header_container ">
+                        <div class="l-page-width">
+                            <h1>Evenement</h1>
+        {% for m in even %}
+
+            <ul id="breadcrumbs">
+                                <li><a href="index.html" title="Home">Home</a></li> <span class="delimiter">&gt;</span>
+                                <li><span class="current_crumb">  {{m.titre}} </span></li>
+                           {% endfor %}
+            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- .kids_top_content_middle -->
+            </div>
+            <div class="bg-level-2-full-width-container kids_bottom_content">
+                <div class="bg-level-2-page-width-container no-padding">
+                    <section class="kids_bottom_content_container">
+                        <!-- ***************** - START Image floating - *************** -->
+                        <div class="page-content">
+                            <div class="bg-level-2 first-part"></div>
+                            <div class="container l-page-width">
+                                <div class="entry-container ">
+                                    <main>
+
+                                        {% for m in even %}
+                                        <div class="portfolio iso-column iso-one-column">
+                                            <div class="grid isotope" data-ppp="4" data-cols="246">
+                                                <div data-categories="wide " class="iso-item">
+                                                    <div class="content-wrapper">
+                                                        <figure>
+                                                            <a title="Project 5" class="prettyPhoto kids_picture" data-rel="prettyPhoto[portfolio]" href="{{ asset('images/') }}{{ m.nomImage }}"></a>
+                                                                <img src="{{ asset('images/') }}{{ m.nomImage }}"   alt='' style="height: 200px; width:1000px" />                                                       </figure>
+                                                    </div>
+                                                    <!--/ content-wrapper-->
+
+
+                                                        <div data-categories="happyfeet" class="iso-item happyfeet">
+
+                                                            <div class="content-wrapper">
+
+
+
+                                                            </div>
+                                                            <!--/ content-wrapper-->
+                                                            <div class="gallery-text">
+                                                                <div class="title"><a class="link" href="portfolio-single-item.html"></a></div>
+                                                            </div>
+
+                                                            <div class="gallery-text">
+                                                                <div class="title"><a class="link" href="portfolio-single-item.html">{{m.titre }}</a></div>
+                                                                <p>
+                                                                   Description :
+                                                                    {{m.description}}
+                                                                </p>
+
+                                                                <p>
+                                                                    Ticket disponible :{{m.ticketDisponible}}
+                                                                </p>
+
+                                                                <p>
+                                                                    Description :
+                                                                    {{m.description}}
+                                                                <p>
+                                                                    note :
+                                                                </p>
+                                                            </div>
+                                                            <div>
+
+                                                                <form>
+                                                                    Nombre de ticket à reserver <label></label>
+                                                                    <input type="text" id="ticket"> </form></br>
+                                                                    <input type="submit" name="reserver" value="Reserver" id="t"></br></br>
+                                                                </form>
+
+
+
+
+                                                            </div>
+
+
+
+
+
+
+
+                                                        </div>
+                                                    {% endfor %}
+
+                                                    <!-- .entry-container -->
+                                                </div>
+                                                <div class="bg-level-2 second-part"></div>
+                                            </div>
+                                            <!-- ***************** - END Image floating - *************** -->
+                    </section>
+                    <!-- .bottom_content_container -->
+                </div>
+            </div>
+        </div>
+        <!-- .end_content -->
+        <!-- FOOTER BEGIN -->
+        <!-- .kids_bottom_container -->
+    {% endblock bodyindex %}

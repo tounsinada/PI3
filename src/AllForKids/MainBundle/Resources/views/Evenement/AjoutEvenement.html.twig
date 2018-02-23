@@ -1,0 +1,144 @@
+{% extends '@AllForKidsMain/Admin/admin2.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{# {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %} #}
+{% block head %}
+
+    <h1 class="page-title">Dashboard</h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('Admin2') }}"> Home</a> </li>
+        <li class="active"><a href="#">Gestion Evenement</a></li>
+    </ul>
+
+
+
+    {% endblock head %}
+
+
+
+        {% block bodyadmin %}
+
+   {# {{ form_start(form) }}
+
+    {{ form_end(form) }}#}
+
+            <div class="btn-toolbar list-toolbar">
+                <a class="btn btn-primary"   role="button" href="{{ path('ajouter_categ') }}" >
+                    <i class="fa fa-plus" ></i> Nouveau Categorie
+                </a>
+
+                <a class="btn btn-primary"   role="button" href="{{ path('ajouter_categ') }}" >
+                    <i class="fa fa-delicious" ></i> Supprimer Categorie
+                </a>
+
+            </div>
+
+
+
+
+
+
+
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
+        <li><a href="#profile" data-toggle="tab">Password</a></li>
+    </ul>
+
+    <div class="row">
+        <div class="col-md-4">
+            <br>
+            <div id="myTabContent" class="tab-content">
+            <div  style="margin-left: 12%" class="form-body">
+                {{ form_start(form) }}
+
+                <table >
+
+                    <tr>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Titre evenement:</label>
+
+                            {{ form_widget(form.titre) }}
+                        </div>
+                    </tr>
+
+                    <tr>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Image :</label>
+
+                            {{ form_widget( form.file) }}
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Date debut :</label>
+
+                            {{ form_widget( form.dateDebut) }}
+                        </div>
+                    </tr>
+
+                    <tr>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Date fin:</label>
+
+                            {{ form_widget( form.dateFin) }}
+                        </div>
+                    </tr>
+                    <tr>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Description:</label>
+
+                            {{ form_widget( form.description) }}
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nombre de tickets disponibles :</label>
+
+                            {{ form_widget( form.ticketDisponible) }}
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Tarif:</label>
+
+                            {{ form_widget( form.tarif) }}
+                        </div>
+                    </tr>
+                    <tr>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Categorie evenement :</label>
+
+                            {{ form_widget( form.categorie) }}
+                        </div>
+
+                    </tr>
+
+                    <tr>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">lieu de l'evenement :</label>
+
+                            {{ form_widget( form.lieu) }}
+                        </div>
+
+                    </tr>
+
+
+                </table>
+
+                <div class="btn-toolbar list-toolbar">
+                    {{ form_widget(form.Ajouter,{'attr':{'cols':'6','rows':'8','placeholder':'','class':'btn btn-primary'}}) }}
+
+
+                </div>
+
+
+                {{ form_end(form) }}
+            </div>
+
+
+
+{% endblock %}

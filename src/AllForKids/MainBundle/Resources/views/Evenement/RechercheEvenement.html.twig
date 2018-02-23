@@ -1,0 +1,34 @@
+<h1>Rechercher Modele par libelle</h1>
+<form method="POST">
+    libelle <input type="text" name="libelle">
+    <input type="submit" value="Rechercher">
+</form>
+
+<h1>
+    liste modele
+</h1>
+<table border="1">
+    <tr>
+        <th>titre</th> <th>image</th> <th>dateDebut</th> <th>dateFin</th>
+        <th>description</th> <th>ticketDisponible</th> <th>tarif</th> <th>typeEven</th>
+    </tr>
+
+    {% for m in evenement %}
+    <tr>
+        <td>{{ m.titre}}</td>
+        <td><img src="{{ asset('images/') }}{{m.nomImage }}" style="width: 50px;height: 50px"> </td>
+        <td>{{ m.dateDebut | date }}</td>
+        <td>{{ m.dateFin |date }}</td>
+        <td>{{m.description }}</td>
+        <td>{{ m.ticketDisponible}}</td>
+        <td>{{ m.tarif }}</td>
+        <td>{{ m.categorie.nomcategorie }}</td>
+        <td>{{ m.lieu }}</td>
+
+
+        <td>  <a href="{{ path('supprime_even',{'id_even':m.id_even}) }}">Supprimer</a> </td>
+        <td><a href="{{ path('update_even',{'id_even':m.id_even}) }}">modifier</a> </td>
+
+    </tr>
+    {% endfor %}
+</table>

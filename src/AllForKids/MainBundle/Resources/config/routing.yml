@@ -1,0 +1,77 @@
+all_for_kids_main_homepage:
+    path:     /
+    defaults: { _controller: AllForKidsMainBundle:Default:index }
+accueil:
+    path:     /Accueil
+    defaults: { _controller: AllForKidsMainBundle:Accueil:Accueil }
+
+Admin:
+    path:     /Show
+    defaults: { _controller: AllForKidsMainBundle:Admin:Show }
+
+Admin2:
+    path:     /admin
+    defaults: { _controller: AllForKidsMainBundle:Admin:admin }
+
+
+
+showbaby:
+    path:     /ShowBaby
+    defaults: { _controller: AllForKidsMainBundle:BabySitter:Show }
+
+showPediatre:
+    path:     /ShowPediatre
+    defaults: { _controller: AllForKidsMainBundle:Pediatre:Show }
+
+
+evenement_homepage:
+    path:     /
+    defaults: { _controller: AllForKidsMainBundle:Default:index }
+
+ajout_even:
+    path:     /ajoutEven
+    defaults: { _controller: AllForKidsMainBundle:evenement:Ajouter }
+
+affiche_even:
+    path:     /afficherEven
+    defaults: { _controller: AllForKidsMainBundle:evenement:Afficher }
+
+supprime_even:
+    path:     /supprimerEven/{id_even}
+    defaults: { _controller: AllForKidsMainBundle:evenement:Supprimer }
+
+update_even:
+    path:     /updateEven/{id_even}
+    defaults: { _controller: AllForKidsMainBundle:evenement:Update }
+
+
+recherche_even:
+    path:     /rechercheEven
+    defaults: { _controller: AllForKidsMainBundle:evenement:Rechercher }
+
+
+ajouter_categ:
+    path:     /ajouterCateg
+    defaults: { _controller: AllForKidsMainBundle:categorie:AjouterCateg }
+
+ajout_reservation:
+    path:     /AjoutReservation
+    defaults: { _controller: AllForKidsMainBundle:Reservation:AjoutReservation }
+
+listeEven:
+    path:     /listeEven
+    defaults: { _controller: AllForKidsMainBundle:evenement:Liste }
+
+
+ReadMore:
+    path:     /ReadMore{id_even}
+    defaults: { _controller: AllForKidsMainBundle:evenement:Read }
+
+
+Map:
+    path:     /Map
+    defaults: { _controller: AllForKidsMainBundle:Default:map }
+
+affiche_reservation:
+    path:     /afficherEven
+    defaults: { _controller: AllForKidsMainBundle:Reservation:ListerReservation }

@@ -1,0 +1,40 @@
+
+    <html>
+    <head>
+        <title>Recherche</title>
+    </head>
+    <body>
+    <form method="POST">
+        <h1>Recherche:</h1>
+        libelle:
+        <br>
+        <input name="libelle" type="text" placeholder="search by libelle">
+        <br>
+        <input type="submit" name="rechercher" value="rechercher">
+    </form>
+    {% block body %}
+        <h1>Welcome to the Marque</h1>
+        <table border="1">
+            <tr><td>ID</td>
+                <td>Libelle</td>
+                <td>Pays</td>
+                <td>Supprimer</td>
+                <td>Modifier</td></tr>
+            {% for m in even %}
+                <tr>
+                    <td>{{ m.id_even }}</td>
+                    <td>{{ m.titre }}</td>
+                    <td>{{ m.dateDebut}}</td>
+                    <td>{{ m.dateFin }}</td>
+                    <td>{{ m.lieu }}</td>
+                    <td>{{ m.tarif}}</td>
+                    <td><a href="{{ path("delete",{'id':m.id}) }}">Supprimer</a> </td>
+                    <td><a href="{{ path("update",{'id':m.id}) }}">Modifier</a> </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endblock %}
+
+    </body>
+    </html>
+{% endblock %}

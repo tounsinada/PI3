@@ -1,0 +1,96 @@
+{% extends 'default/index.html.twig' %}
+
+
+
+    {% block bodyindex %}
+        <!--/ .top-panel-->
+        <!-- .bg-level-1 -->
+        <div id="kids_middle_container">
+            <!-- .content -->
+            <div class="kids_top_content">
+                <div class="kids_top_content_middle ">
+                    <div class="header_container ">
+                        <div class="l-page-width">
+                            <h1>Liste des evenements</h1>
+                            <ul id="breadcrumbs">
+                                <li><a href="index.html" title="Home">Home</a></li> <span class="delimiter">&gt;</span>
+                                <li><span class="current_crumb">Tous les evenements</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- .kids_top_content_middle -->
+            </div>
+
+
+            <!-- ***************** - START Image floating - *************** -->
+            <div class="bg-level-2-full-width-container kids_bottom_content">
+                <div class="bg-level-2-page-width-container no-padding">
+                    <!-- ***************** - START WooCommerce integration - *************** -->
+                    <section class="kids_bottom_content_container">
+                        <div class="page-content">
+                            <div class="bg-level-2 first-part"></div>
+                            <div class="container l-page-width">
+                                <div class="entry-container single-sidebar">
+
+                                    <main>
+                                        <div class="portfolio iso-column iso-three-column">
+                                            <div class="filter-wrapper">
+                                                <select class="filter">
+                                                    <option value="*" class="active">All</option>
+                                                    <option value=".happyfeet" data-filter=".happyfeet">Happy Feet</option>
+                                                    <option value=".lego" data-filter=".lego" data-filter="happyfeet">Lego</option>
+                                                    <option value=".tangled" data-filter=".tangled">Tangled</option>
+                                                </select>
+                                            </div>
+                                            <div class="grid isotope" data-ppp="6" data-cols="253">
+                                                {% for m in evenement %}
+                                                <div data-categories="happyfeet" class="iso-item happyfeet">
+
+                                                    <div class="content-wrapper">
+                                                        <figure>
+                                                            <a title="Project 5" class="prettyPhoto kids_picture" data-rel="prettyPhoto[portfolio]"
+                                                             >
+                                                                <img src="{{ asset('images/') }}{{ m.nomImage }}" width='278' height='182' alt='' /></a>
+                                                        </figure>
+                                                    </div>
+                                                    <!--/ content-wrapper-->
+                                                    <div class="gallery-text">
+                                                        <div class="title"><a class="link" href="portfolio-single-item.html">{{m.titre }}</a></div>
+                                                    </div>
+                                                    <div class="post-footer">
+                                                        <a href="{{ path('ReadMore',{'id_even': m.id_even}) }}"class="cws_button">Read More</a>
+                                                    </div>
+
+
+
+                                            {% endfor %}
+
+                                            <!-- grid isotope -->
+                                            <div class='pagenavi gl'>
+                                                <span class='pages'>Page (1 of 2)</span><a class="prevpostslink pagenavi_no_click" href="#" style="cursor:default;">Prev</a><span class="current">1</span><a class="page" href="#">2</a><a class="nextpostslink" href="#">Next</a></div>
+                                        </div>
+                                        <!-- .gl_col_ -->
+                                        <!-- comments block -->
+                                        <!-- //end comments block -->
+                                    </main>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- .entry-container -->
+        </div>
+        </div>
+        <!-- ***************** - END Image floating - *************** -->
+
+        <!-- .bottom_content_container -->
+        </div>
+
+
+        <!-- .end_content -->
+        <!-- FOOTER BEGIN -->
+
+        <!-- tuner -->
+    {% endblock %}

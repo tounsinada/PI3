@@ -1,0 +1,50 @@
+{% extends '@AllForKidsMain/Admin/admin2.html.twig' %}
+
+{% block head %}
+
+    <h1 class="page-title">Dashboard</h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('Admin2') }}"> Home</a> </li>
+        <li class="active"><a href="#">Gestion Evenement</a></li>
+    </ul>
+
+
+
+{% endblock head %}
+
+
+{% block bodyadmin %}
+
+    <html>
+    <head>
+        <title>ModifierMarque</title>
+    </head>
+    <body>
+
+    <h1>Modifier Marque</h1>
+    {{ form_start(form) }}
+
+    <div class="btn-toolbar list-toolbar">
+        <button class="btn btn-primary"><i class="fa fa-angle-double-down"></i> Ajouter</button>
+    </div>
+    {{ form_end(form) }}
+    </body>
+    </html>
+
+
+    {% endblock bodyadmin %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

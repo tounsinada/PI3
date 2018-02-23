@@ -1,0 +1,30 @@
+{% extends '@AllForKidsMain/Admin/admin2.html.twig' %}
+
+{% block head %}
+
+    <h1 class="page-title">Dashboard</h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('Admin2') }}"> Home</a> </li>
+        <li class="active"><a href="#">Ajout Categorie</a></li>
+    </ul>
+
+
+
+{% endblock head %}
+
+
+
+  {% block bodyadmin %}
+
+<form method="post">
+    nom categorie<input type="text" name="p">
+
+    <input type="submit" name="ajouter" value="Ajouter" id="ajouter">
+
+
+
+
+
+
+</form>
+  {% endblock bodyadmin %}
